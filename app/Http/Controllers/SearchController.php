@@ -21,12 +21,12 @@ class SearchController extends Controller {
 
 	public function search(Request $request){
 		$this->validate($request, [
-		    'kategori' => 'required',
+		    'search' => 'required',
 		]);
 		$kategoris = Kategori::all();
 		$search = $request->search;
 		$kategori = $request->kategori;
-		if ($kategori=="all") {
+		if ($kategori == "all") {
 			$arsip = Arsip::where('judul','like','%'.$search.'%')
 		        ->orderBy('judul')
 		        ->paginate(20);

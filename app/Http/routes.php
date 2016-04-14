@@ -1,6 +1,6 @@
 <?php
 Route::get('/index', 'SearchController@index');
-Route::post('/search', 'SearchController@search');
+Route::post('/index', 'SearchController@search');
 Route::get('/arsip', 'SearchController@arsip');
 Route::get('/admin', 'InputController@input');
 Route::post('/storebuku', 'InputController@storebuku');

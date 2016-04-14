@@ -1,7 +1,12 @@
-{!! Form::open(
-    array('action' => 'SearchController@search')
-    )
-!!}
+@if($errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
+
+<form action="" method="post">
 {!! csrf_field() !!}
     <div>
         Judul : 
@@ -16,8 +21,7 @@
         </select>
         <button type="submit">Submit</button>
     </div>
-{!! Form::close() !!}
-
+</form>
 @if (count($arsip))
     @foreach($arsip as $arsip)
     <br>
